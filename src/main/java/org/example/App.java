@@ -1,13 +1,15 @@
 package org.example;
 
 /**
- * Hello world!
+ * TicTacToe game!
  *
  */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Game game = new Game(System.out);
+        GameLoop gameLoop = new GameLoop(game);
+        gameLoop.play();
     }
 }
