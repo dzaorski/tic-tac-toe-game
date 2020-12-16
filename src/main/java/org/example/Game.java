@@ -43,8 +43,8 @@ public class Game {
     }
 
     public boolean playAt(int shot[]) {
-        int i = shot[0];
-        int j = shot[1];
+        int i = shot[0] - 1;
+        int j = shot[1] - 1;
         if(i>=3||j>=3||i<0||j<0)
             return false;
         if(grid[i][j] != ' '){

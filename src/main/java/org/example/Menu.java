@@ -19,12 +19,19 @@ public class Menu {
         System.out.println("Write you move - row number and column number (in example 13):");
     }
 
-    final int[] takeAShot() {
+    final int[] takeANumber() {
         Scanner scanner = new Scanner(System.in);
         char[] input = scanner.nextLine().toCharArray();
         int[] shot = new int[2];
-        shot[0] = Integer.parseInt(String.valueOf(input[0])) - 1;
-        shot[1] = Integer.parseInt(String.valueOf(input[1])) - 1;
+        for (int i = 0; i < shot.length; i++) {
+            try {
+                shot[i] = Integer.parseInt(String.valueOf(input[i]));
+            } catch (NumberFormatException nfe) {
+                System.err.println("Could not parse as an int at index: " + i);
+            } catch (IndexOutOfBoundsException ioobe) {
+                System.err.println("Nothing to parse in at index: " + i);
+            }
+        }
         return shot;
     }
 

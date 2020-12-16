@@ -16,7 +16,7 @@ public class GameLoop {
         game.print();
         do {
             menu.playerTakesTurn(game.getTurn());
-            if (game.playAt(menu.takeAShot())) {
+            if (game.playAt(menu.takeANumber())) {
                 game.print();
                 game.changeTurn();
             } else {
